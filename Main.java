@@ -32,6 +32,9 @@ public class Main {
 		}).start();
 		
 		emitter2.emit("click");
+		emitter2.addEventListener("click", () -> {
+			System.out.println("Second click event on emitter2");
+		});
 		emitter1.emit("click");
 		
 

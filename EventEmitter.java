@@ -1,21 +1,20 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class EventEmitter {
 	
 	EventLoop eventLoop;
-	HashMap<String, FunctionalInterface> events;
+	ArrayList<Event> events;
 	public EventEmitter(EventLoop eventLoop) {
 		this.eventLoop = eventLoop;
-		this.events = new HashMap<String, FunctionalInterface>();
+		this.events = new ArrayList<Event>();
 	}
 	public void addEventListener(String type, FunctionalInterface f) {
-		events.put(type, f);
+		events.add(new Event(type, f));
 	}
 	public void emit(String type) {
-		events.forEach((t, f) -> {
-			if(t.equals(type))
-				eventLoop.eventQueue.add(f);
-		});
+		for(Event e: this.events)
+			if(e.type.equals(type))
+				eventLoop.eventQueue.add(e.f);
 	}
 
 }
