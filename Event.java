@@ -2,8 +2,8 @@
 public class Event {
 	
 	String type;
-	FunctionalInterface f;
-	public Event(String type, FunctionalInterface f) {
+	EventInterface f;
+	public Event(String type, EventInterface f) {
 		this.type = type;
 		this.f = f;
 	}

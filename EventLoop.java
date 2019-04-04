@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class EventLoop implements Runnable{
 	
-	ArrayList<FunctionalInterface> eventQueue;
+	ArrayList<EventInterface> eventQueue;
 	public EventLoop() {
-		this.eventQueue = new ArrayList<FunctionalInterface>();
+		this.eventQueue = new ArrayList<EventInterface>();
 	}
 
 	@Override

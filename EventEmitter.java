@@ -8,7 +8,7 @@ public class EventEmitter {
 		this.eventLoop = eventLoop;
 		this.events = new ArrayList<Event>();
 	}
-	public void addEventListener(String type, FunctionalInterface f) {
+	public void addEventListener(String type, EventInterface f) {
 		events.add(new Event(type, f));
 	}
 	public void emit(String type) {
